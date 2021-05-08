@@ -1,12 +1,10 @@
-import React from "react";
-import Button from "@material-ui/core/Button";
+import React from "react"
+import { ButtonDemo } from "./components/Atoms/Button/Button"
 
 function App() {
   return (
-    <Button variant="contained" color="primary">
-      Hello World
-    </Button>
-  );
+    <ButtonDemo label='Hola Mundo desde typescript react' />
+  )
 }
 
-export default App;
+export default App
