@@ -1,7 +1,7 @@
 import React from "react"
 import { render } from "@testing-library/react"
-import { ButtonDemo } from "../Button"
+import { CustomButton } from "../Button"
 
 test("render AttendanceCalendar", () => {
-    render(<ButtonDemo />)
+    render(<CustomButton label ='Prueba' />)
 })
