@@ -1,8 +1,8 @@
-import React from 'react';
-import './button.css';
-import Button from '@material-ui/core/Button';
+import React from "react";
+// import './button.css'
+import Button from "@material-ui/core/Button";
 
-export interface ButtonProps {
+export interface CustomButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
@@ -14,7 +14,7 @@ export interface ButtonProps {
   /**
    * How large should the button be?
    */
-  size?: 'small' | 'medium' | 'large';
+  size?: "small" | "medium" | "large";
   /**
    * Button contents
    */
@@ -22,23 +22,33 @@ export interface ButtonProps {
   /**
    * Optional click handler
    */
+  className?: string;
+
   onClick?: () => void;
 }
 
 /**
  * Primary UI component for user interaction
  */
-export const ButtonDemo: React.FC<ButtonProps> = ({
+export const CustomButton: React.FC<CustomButtonProps> = ({
   primary = false,
-  size = 'medium',
+  size = "medium",
   backgroundColor,
   label,
+  className,
   ...props
 }) => {
-  const mode = primary ? 'primary' : 'secondary';
+  const mode = primary ? "primary" : "secondary";
   return (
-    <Button variant="contained" color={mode}>
-        {label}
-      </Button>
+    <Button
+      style={{ backgroundColor: backgroundColor }}
+      variant="contained"
+      color={mode}
+      size={size}
+      className={`${className}`}
+      {...props}
+    >
+      {label}
+    </Button>
   );
 };
