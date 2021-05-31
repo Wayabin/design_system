@@ -12,18 +12,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-<<<<<<< HEAD
-    "noEmit": true,
-    "jsx": "react"
-  },
-  "include": [
-    "src"
-  ],
-  "extends": "./tsconfig.paths.json"
-=======
     "jsx": "preserve"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
->>>>>>> 2697b7918b8bc22714337d0b52d96c520b8e6305
 }
