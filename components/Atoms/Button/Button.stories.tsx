@@ -6,6 +6,9 @@ import { CustomButton, CustomButtonProps } from './Button'
 export default {
   title: 'Design System/Atoms/Button',
   component: CustomButton,
+  parameters: {
+    position: "0.11",
+  },
   argTypes: {
     backgroundColor: { control: 'color' },
   },
