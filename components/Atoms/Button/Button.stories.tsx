@@ -7,7 +7,11 @@ export default {
   title: 'Design System/Atoms/Button',
   component: CustomButton,
   parameters: {
+<<<<<<< HEAD:components/Atoms/Button/Button.stories.tsx
     position: "0.1",
+=======
+    position: "0.11",
+>>>>>>> a14f0137553a7e53b97e0eba26ad327c46443d11:components/Button/Button.stories.tsx
   },
   argTypes: {
     backgroundColor: { control: 'color' },
