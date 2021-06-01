@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;300;400;500;600;700&display=swap");
+
+$font-family-sans-serif: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+  "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$enable-caret: false;
+
+.sb-main-padded.sb-show-main {
+  margin: 0;
+  padding: 0 !important;
+  display: block;
+}
+
+.banner_container {
+  height: 100% !important;
+  position: relative !important;
+  left: 20% !important;
+
+  h1,
+  h2,
+  h5 {
+    color: white !important;
+    margin: 0 !important;
+  }
+
+  @media screen and (max-width: 992px) {
+    left: 2% !important;
+  }
+
+  .swiper-slide-item_content {
+    position: relative;
+
+    .ssi-image {
+      position: absolute;
+      left: 110%;
+      top: -50%;
+      border-radius: 10%;
+
+      @media screen and (max-width: 360px) {
+        width: 50%;
+        left: 70%;
+        top: 0%;
+        z-index: -1;
+      }
+    }
+
+    .ssi-category {
+      color: #fff;
+      font-size: 16px !important;
+      font-family: $font-family-sans-serif;
+      line-height: 20px;
+      margin-bottom: 20px;
+      margin-top: 0px;
+      text-align: left;
+      margin-right: auto;
+      margin-left: auto;
+
+      @media screen and (max-width: 360px) {
+        // visibility: hidden;
+      }
+    }
+
+    .ssi-title-1 {
+      color: #fff;
+      font-size: 60px;
+      font-family: $font-family-sans-serif;
+      line-height: 40px;
+      margin-bottom: 16px;
+      margin-top: 0px;
+      text-align: left;
+      margin-right: auto;
+      margin-left: auto;
+
+      @media screen and (max-width: 360px) {
+        // visibility: hidden;
+        font-size: 2em;
+      }
+    }
+
+    .ssi-title-2 {
+      color: crimson;
+      font-size: 18px;
+      font-family: $font-family-sans-serif;
+      line-height: 24px;
+      margin-bottom: 8px;
+      margin-top: 0px;
+      text-align: left;
+      margin-right: auto;
+      margin-left: auto;
+
+      // @media screen and (min-width: $desktopDeviceDown) {
+      //     font-size: 18px;
+      //     line-height: 24px;
+      //     max-width: 100%;
+      //     margin-bottom: 8px;
+      // }
+    }
+
+    .ssi-title-3 {
+      color: #fff;
+      font-size: 16px;
+      font-family: $font-family-sans-serif;
+      line-height: 26px;
+      margin-bottom: 0;
+      margin-top: 0px;
+      text-align: left;
+      margin-right: auto;
+      margin-left: auto;
+
+      span {
+        font-family: $font-family-sans-serif;
+        font-size: 28px;
+        line-height: 34px;
+        text-align: left;
+        display: block;
+      }
+
+      // @media screen and (min-width: $desktopDeviceDown) {
+      //     // font-family: $font-family-lato-medium;
+      //     font-size: 28px;
+      //     line-height: 34px;
+      //     text-align: left;
+
+      //     span {
+      //         display: inline-block;
+      //         font-size: 40px;
+      //         line-height: 48px;
+      //         max-width: 100%;
+      //         margin-bottom: 8px;
+      //     }
+      // }
+    }
+  }
+}
