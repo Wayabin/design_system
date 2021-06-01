@@ -1,13 +1,13 @@
 import React from "react";
 import "./_banner.scss";
 
-export interface BannerProps {
-  // image?: string;
-}
+// export interface BannerProps {
+//   // image?: string;
+// }
 
-export const Banner = ({ ...props }) => {
+export const Banner = () => {
   return (
-    <div {...props} className="banner_container">
+    <div className="banner_container">
       <div className="swiper-slide-item">
         <div className="swiper-slide-item_content">
           <p className="ssi-category">#TECATESIEMPRECONTIGO</p>
