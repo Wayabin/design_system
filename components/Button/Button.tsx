@@ -1,5 +1,5 @@
-import React from "react"
-import "./_button.scss"
+import React from 'react'
+// import './button.css'
 
 export interface CustomButtonProps {
   /**
@@ -13,7 +13,7 @@ export interface CustomButtonProps {
   /**
    * How large should the button be?
    */
-  size?: "small" | "medium" | "large"
+  size?: 'small' | 'medium' | 'large'
   /**
    * Button contents
    */
@@ -29,20 +29,10 @@ export interface CustomButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const CustomButton: React.FC<CustomButtonProps> = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
-  className,
-  ...props
-}) => {
-  const mode = primary ? "primary" : "secondary"
+export const CustomButton: React.FC<CustomButtonProps> = ({ primary = false, size = 'medium', backgroundColor, label, className, ...props }) => {
+  const mode = primary ? 'primary' : 'secondary'
   return (
-    <button
-      style={{ backgroundColor: backgroundColor }}
-      className={` container ${size} `}
-    >
+    <button style={{ backgroundColor: backgroundColor }} variant="contained" className={` bg-red-400 font-bold text-white px-6 py-2 ${size} `}>
       {label}
     </button>
   )

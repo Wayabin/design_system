@@ -4,11 +4,8 @@ import { Story, Meta } from '@storybook/react'
 import { CustomButton, CustomButtonProps } from './Button'
 
 export default {
-  title: 'Design System/Atoms/Button',
+  title: 'Design System/Button',
   component: CustomButton,
-  parameters: {
-    position: "0.11",
-  },
   argTypes: {
     backgroundColor: { control: 'color' },
   },
