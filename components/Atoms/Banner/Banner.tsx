@@ -3,11 +3,20 @@ import "./_banner.scss";
 
 export interface BannerProps {
   image?: string;
+  backgroundColor?: string;
 }
 
-export const Banner = ({ img, texts, ...props }) => {
+export const Banner = ({
+  img,
+  texts,
+  backgroundColor = "#000000",
+  ...props
+}) => {
   return (
-    <div {...props} className="banner_container">
+    <div
+      className="banner_container"
+      style={{ backgroundColor: backgroundColor }}
+    >
       <div className="swiper-slide-item">
         <div className="swiper-slide-item_content">
           <p className="ssi-category">{texts.text1}</p>

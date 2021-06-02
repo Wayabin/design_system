@@ -21,7 +21,11 @@ export interface CarouselProps {
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
-export const Carousel = ({ carouselItems, backgroundColor='black', ...props }) => {
+export const Carousel = ({
+  carouselItems,
+  backgroundColor = "black",
+  ...props
+}) => {
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
 

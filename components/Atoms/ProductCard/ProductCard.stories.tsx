@@ -14,4 +14,11 @@ const Template: Story<ProductCardProps> = (args) => <ProductCard {...args} />;
 
 export const ProductCardDemo = Template.bind({});
 
-ProductCardDemo.args = {};
+ProductCardDemo.args = {
+  img:
+    "https://www.sampieri.com.mx/wp-content/uploads/2020/04/CERVEZA-TECATE-LATA-473-ml..jpg",
+  brand: "MyBrand",
+  title: "Titulo del producto demo",
+  text: "Este es un producto demo",
+  price: 15.89,
+};

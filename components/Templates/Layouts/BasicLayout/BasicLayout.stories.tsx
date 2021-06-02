@@ -1,7 +1,11 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
+<<<<<<< HEAD
 import { BasicLayout, BasicLayoutProps } from './BasicLayout'
+=======
+import { BasicLayout, BasicLayoutProps } from './index'
+>>>>>>> a14f0137553a7e53b97e0eba26ad327c46443d11
 
 export default {
   title: 'Design System/Templates/BasicLayout',

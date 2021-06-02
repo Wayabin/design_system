@@ -1,7 +1,7 @@
-import React from "react"
-import { Story, Meta } from "@storybook/react"
+import React from "react";
+import { Story, Meta } from "@storybook/react";
 
-import { Banner, BannerProps } from "./Banner"
+import { Banner, BannerProps } from "./Banner";
 
 export default {
   title: "Design System/Atoms/Banner",
@@ -12,14 +12,17 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as Meta
+} as Meta;
 
-const Template: Story<BannerProps> = (args) => <Banner {...args} />
+const Template: Story<BannerProps> = (args) => <Banner {...args} />;
 
-export const BannerDemo = Template.bind({})
+export const BannerDemo = Template.bind({});
 
 BannerDemo.args = {
-  carouselItems: [<h1 style={{ fontSize: 45}}>Hola mundo</h1>, <h1>Hola como estas</h1>],
-}
-
-
+  texts: {
+    text1: "#ESTEUNDEMO",
+    text2: "Aquí va el texto de descuento 20%",
+    text3: "Aqui puedes colocar un texto alternativo",
+    text4: "Y por ultimo algun texto adicional",
+  },
+};
