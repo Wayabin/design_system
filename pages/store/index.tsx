@@ -19,7 +19,7 @@ const Products = [
     title: "Cerveza Tecate Lata 473 ml.",
     text:
       "Una cerveza lager dorada, brillante y bien equilibrada con un sabor crujiente a malta, un amargor bajo a medio que termina limpio. Originaria de hace 60 años en la cervecería en el pueblo de Tecate en Baja California (México), Tecate original fue su primera cerveza de autor.",
-    price: "21.00",
+    price: "18.00",
   },
   {
     img:
@@ -62,7 +62,6 @@ export default function Home() {
               text1: "#TecatonBetosmascercadeti",
               text2: "2 x $32 y 3 x $45",
               text3: "Hasta el 16 de junio",
-
               text4:
                 "Encuentra más promos en tienda o llama a los teléfonos y pide a domicilio",
 
