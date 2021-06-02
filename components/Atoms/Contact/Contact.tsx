@@ -7,7 +7,7 @@ export interface ContactProps {
 export const Contact = ({ phone }) => {
   return (
     <div className="container flex justify-center items-center bg-gray-100 h-10">
-      <p className="mx-1"> Venta teléfonica</p> <strong>{phone}</strong>
+      <p className="mx-1"> Contactanos via WhatsApp</p> <strong>{phone}</strong>
     </div>
   );
 };
