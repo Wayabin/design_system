@@ -19,6 +19,7 @@ export default function Home() {
       <Carousel
         carouselItems={[
           <Banner
+          
             texts={{
               text1: "#TecatonBetosmascercadeti",
               text2: "2 x $32 y 3 x $45",
