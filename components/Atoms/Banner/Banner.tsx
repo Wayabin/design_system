@@ -7,7 +7,7 @@ export interface BannerProps {
 
 export const Banner = ({ img, texts, ...props }) => {
   return (
-    <div {...props} className="banner_container">
+    <div className="banner_container">
       <div className="swiper-slide-item">
         <div className="swiper-slide-item_content">
           <p className="ssi-category">{texts.text1}</p>
