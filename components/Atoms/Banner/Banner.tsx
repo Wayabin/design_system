@@ -1,9 +1,9 @@
 import React from "react";
 import "./_banner.scss";
 
-// export interface BannerProps {
-//   // image?: string;
-// }
+export interface BannerProps {
+  image?: string;
+}
 export const Banner = ({ img, texts, ...props }) => {
   return (
     <div className="banner_container">

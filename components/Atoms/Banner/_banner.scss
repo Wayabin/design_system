@@ -36,11 +36,8 @@ $enable-caret: false;
       top: -50%;
       border-radius: 10%;
 
-      @media screen and (max-width: 360px) {
-        width: 50%;
-        left: 70%;
-        top: 0%;
-        z-index: -1;
+      @media screen and (max-width: 992px) {
+        visibility: hidden;
       }
     }
 
@@ -71,7 +68,7 @@ $enable-caret: false;
       margin-right: auto;
       margin-left: auto;
 
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 992px) {
         // visibility: hidden;
         font-size: 2em;
       }
