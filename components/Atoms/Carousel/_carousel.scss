@@ -4,7 +4,7 @@ $desktopDeviceDown: 1200px;
 $tabletDeviceDown: 992px;
 
 .swiper-container {
-  height: 250px;
+  height: 300px;
 
   @media screen and (max-width: $desktopDeviceDown) {
     height: 200px;
