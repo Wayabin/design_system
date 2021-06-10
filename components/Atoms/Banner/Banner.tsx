@@ -2,11 +2,19 @@ import React from "react";
 import "./_banner.scss";
 
 export interface BannerProps {
-  image?: string;
+  img?: string;
+  texts: TextProps;
   backgroundColor?: string;
 }
 
-export const Banner = ({
+interface TextProps {
+  text1: string;
+  text2: string;
+  text3: string;
+  text4: string;
+}
+
+export const Banner: React.FC<BannerProps> = ({
   img,
   texts,
   backgroundColor = "#000000",

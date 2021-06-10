@@ -1,8 +1,20 @@
-import React from "react";
+import React, { ImgHTMLAttributes } from "react";
 
-export interface ProductCardProps {}
+export interface ProductCardProps {
+  img: string;
+  brand: string;
+  title: string;
+  text: string;
+  price: number;
+}
 
-export const ProductCard = ({ img, brand, title, text, price }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({
+  img,
+  brand,
+  title,
+  text,
+  price,
+}) => {
   return (
     <div className="w-full py-5">
       <a
@@ -19,7 +31,7 @@ export const ProductCard = ({ img, brand, title, text, price }) => {
       >
         <div className="relative pb-48 overflow-hidden">
           <img
-            styles={{ width: "100px !important", height: "100px !important" }}
+            // styles={{ width: "100px !important", height: "100px !important" }}
             className="absolute"
             src={img}
             alt=""

@@ -1,10 +1,10 @@
 import React from "react";
 import "./BasicLayout.scss";
 export interface BasicLayoutProps {
-  //   children?: any
+  children?: any;
 }
 
-export const BasicLayout = ({ children }) => {
+export const BasicLayout: React.FC<BasicLayoutProps> = ({ children }) => {
   return (
     <div className="container">
       {/* <div className="store-header">Header</div> */}

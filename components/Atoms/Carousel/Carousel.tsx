@@ -16,12 +16,12 @@ import "swiper/components/scrollbar/scrollbar.scss";
 import "./_carousel.scss";
 export interface CarouselProps {
   backgroundColor?: string;
-  carouselItems: Array<Element>;
+  carouselItems: Array<JSX.Element>;
 }
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
-export const Carousel = ({
+export const Carousel: React.FC<CarouselProps> = ({
   carouselItems,
   backgroundColor = "black",
   ...props
@@ -40,11 +40,9 @@ export const Carousel = ({
 
   return (
     <Swiper
-      sty
       style={{ backgroundColor: backgroundColor }}
       observer
       loop={totalItems !== 1}
-      touchStartreventDefault={false}
       autoplay={
         totalItems === 1
           ? false
@@ -61,16 +59,16 @@ export const Carousel = ({
               nextEl: navigationNextRef.current,
             }
       }
-      onInit={
-        totalItems === 1
-          ? null
-          : (swiper) => {
-              swiper.params.navigation.prevEl = navigationPrevRef.current;
-              swiper.params.navigation.nextEl = navigationNextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }
-      }
+      // onInit={
+      //   totalItems === 1
+      //     ? null
+      //     : (swiper) => {
+      //         swiper.params.navigation.prevEl = navigationPrevRef.current;
+      //         swiper.params.navigation.nextEl = navigationNextRef.current;
+      //         swiper.navigation.init();
+      //         swiper.navigation.update();
+      //       }
+      // }
       pagination={
         totalItems === 1
           ? false

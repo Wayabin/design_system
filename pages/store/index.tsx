@@ -19,7 +19,7 @@ const Products = [
     title: "Cerveza Tecate Lata 473 ml.",
     text:
       "Una cerveza lager dorada, brillante y bien equilibrada con un sabor crujiente a malta, un amargor bajo a medio que termina limpio. Originaria de hace 60 años en la cervecería en el pueblo de Tecate en Baja California (México), Tecate original fue su primera cerveza de autor.",
-    price: "18.00",
+    price: 18.0,
   },
   {
     img:
@@ -28,7 +28,7 @@ const Products = [
     title: "Cerveza Heineken Vidrio 355 ml.",
     text:
       "Heineken es una cerveza lager premium de cuerpo completo con un color dorado intenso, un ligero aroma afrutado, un sabor amargo suave y un aroma equilibrado de lúpulo que deja un acabado fresco y limpio para un sabor refrescante.",
-    price: "21.00",
+    price: 21.0,
   },
   {
     img:
@@ -37,7 +37,7 @@ const Products = [
     title: "Cerveza Xx Lager Lata 473 ml.",
     text:
       "Dos Equis es una cerveza dorada crujiente y dorada de estilo pilsner de México con tonos terrosos y el equilibrio justo de sabor y refresco. Elaborado por primera vez por el maestro cervecero alemán Wilhelm Hasse a fines del siglo XIX en México e importado desde 1983 en los Estados Unidos, auténtica cerveza lager Mexicon.",
-    price: "19.00",
+    price: 19.0,
   },
   {
     img:
@@ -46,10 +46,9 @@ const Products = [
     title: "Cerveza Indio Vidrio 355 ml.",
     text:
       "Cerveza oscura conocida por su carácter a malta y su ligero aroma a caramelo.",
-    price: "12.00",
+    price: 12.0,
   },
 ];
-
 
 export default function Home() {
   return (
@@ -57,14 +56,12 @@ export default function Home() {
       <Carousel
         carouselItems={[
           <Banner
-
             texts={{
               text1: "#TecatonBetosmascercadeti",
               text2: "2 x $32 y 3 x $45",
               text3: "Hasta el 16 de junio",
               text4:
                 "Encuentra más promos en tienda o llama a los teléfonos y pide a domicilio",
-
             }}
             img="https://scontent.fmex24-1.fna.fbcdn.net/v/t1.6435-0/s600x600/130749834_252707419527906_2112004596168754534_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=8bfeb9&_nc_eui2=AeE2LMZFDC0UBuew4DDO4JYwrRrxZ88O-UWtGvFnzw75RV5g276iZoytM6AcJw4zNoJ2GCl8k7cpIAVWsC2KAJvo&_nc_ohc=SyLAWccPiTkAX-D6k7-&_nc_ht=scontent.fmex24-1.fna&tp=7&oh=0f107a83db69c61d23195615aa97d098&oe=60DB93EE"
           />,
