@@ -20,10 +20,17 @@ export const Banner: React.FC<BannerProps> = ({
   backgroundColor = "#000000",
   ...props
 }) => {
+  console.log(img);
+
   return (
     <div
       className="banner_container"
-      style={{ backgroundColor: backgroundColor }}
+      style={{
+        backgroundColor: backgroundColor,
+        backgroundImage: `url(http://localhost:1337${img})`,
+        backgroundRepeat: "no-repeat, repeat",
+        backgroundPosition: "center",
+      }}
     >
       <div className="swiper-slide-item">
         <div className="swiper-slide-item_content">
@@ -31,7 +38,11 @@ export const Banner: React.FC<BannerProps> = ({
           <p className="ssi-title-1">{texts.text2}</p>
           <p className="ssi-title-2">{texts.text3}</p>
           <p className="ssi-title-3">{texts.text4}</p>
-          <img className="ssi-image" src={img} alt="" />
+          {/* <img
+            className="ssi-image"
+            src={`http://localhost:1337${img}`}
+            alt=""
+          /> */}
         </div>
       </div>
     </div>

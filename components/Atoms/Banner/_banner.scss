@@ -32,8 +32,9 @@ $enable-caret: false;
 
     .ssi-image {
       position: absolute;
-      left: 110%;
-      top: -50%;
+      left: 50%;
+      top: -100%;
+      // z-index: -1;
       border-radius: 10%;
 
       @media screen and (max-width: 992px) {

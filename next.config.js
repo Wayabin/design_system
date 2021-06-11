@@ -8,7 +8,7 @@ module.exports = withCss(
       // Dangerously allow production builds to successfully complete even if
       // your project has type errors.
       // !! WARN !!
-          ignoreBuildErrors:false,
+          ignoreBuildErrors:true,
       },
     webpack(config) {
       config.module.rules.push({

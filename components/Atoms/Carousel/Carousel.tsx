@@ -59,16 +59,16 @@ export const Carousel: React.FC<CarouselProps> = ({
               nextEl: navigationNextRef.current,
             }
       }
-      // onInit={
-      //   totalItems === 1
-      //     ? null
-      //     : (swiper) => {
-      //         swiper.params.navigation.prevEl = navigationPrevRef.current;
-      //         swiper.params.navigation.nextEl = navigationNextRef.current;
-      //         swiper.navigation.init();
-      //         swiper.navigation.update();
-      //       }
-      // }
+      onInit={
+        totalItems === 1
+          ? null
+          : (swiper) => {
+              swiper.params.navigation.prevEl = navigationPrevRef.current;
+              swiper.params.navigation.nextEl = navigationNextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }
+      }
       pagination={
         totalItems === 1
           ? false
