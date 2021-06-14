@@ -7,12 +7,12 @@ export interface BannerProps {
   backgroundColor?: string;
 }
 
-interface TextProps {
+type TextProps = {
   text1: string;
   text2: string;
   text3: string;
   text4: string;
-}
+};
 
 export const Banner: React.FC<BannerProps> = ({
   img,

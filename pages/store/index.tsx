@@ -1,5 +1,4 @@
 import React from "react";
-import wrapper from "state";
 import BasicLayout from "../../components/Templates/Layouts/BasicLayout/BasicLayout";
 import { Carousel } from "../../components/Atoms/Carousel/Carousel";
 import { Banner } from "../../components/Atoms/Banner/Banner";
@@ -46,13 +45,27 @@ const Products = [
   },
 ];
 
-export default function Home({ banners }) {
-  console.log("banners", banners);
+export interface HomeProps {
+  banners: Array<BannerObject>;
+}
 
+type BannerObject = {
+  hashTitle: string;
+  mainTitle: string;
+  secondTitle: string;
+  thirdTitle: string;
+  imgBanner: BannerImage;
+};
+
+type BannerImage = {
+  url: string;
+};
+
+const Home: React.FC<HomeProps> = ({ banners }) => {
   return (
     <BasicLayout>
       <Carousel
-        carouselItems={banners?.map((banner) => {
+        carouselItems={banners?.map((banner: BannerObject) => {
           return (
             <Banner
               texts={{
@@ -76,34 +89,36 @@ export default function Home({ banners }) {
       </div>
     </BasicLayout>
   );
-}
+};
 
-export async function getStaticProps() {
-  const client = new ApolloClient({
-    uri: "http://localhost:1337/graphql",
-    cache: new InMemoryCache(),
-  });
+export default Home;
 
-  const { data } = await client.query({
-    query: gql`
-      query getBanners {
-        banners {
-          id
-          hashTitle
-          mainTitle
-          secondTitle
-          thirdTitle
-          imgBanner {
-            url
-          }
-        }
-      }
-    `,
-  });
+// export async function getStaticProps() {
+//   const client = new ApolloClient({
+//     uri: "http://localhost:1337/graphql",
+//     cache: new InMemoryCache(),
+//   });
 
-  return {
-    props: {
-      banners: data.banners,
-    },
-  };
-}
+//   const { data } = await client.query({
+//     query: gql`
+//       query getBanners {
+//         banners {
+//           id
+//           hashTitle
+//           mainTitle
+//           secondTitle
+//           thirdTitle
+//           imgBanner {
+//             url
+//           }
+//         }
+//       }
+//     `,
+//   });
+
+//   return {
+//     props: {
+//       banners: data.banners,
+//     },
+//   };
+// }

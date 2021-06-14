@@ -29,7 +29,7 @@ export const Carousel: React.FC<CarouselProps> = ({
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
 
-  let content = carouselItems;
+  let content = carouselItems || 0;
   const totalItems = content.length;
   if (!carouselItems || carouselItems.length === 0) {
     return null;
@@ -59,30 +59,27 @@ export const Carousel: React.FC<CarouselProps> = ({
               nextEl: navigationNextRef.current,
             }
       }
-      onInit={
-        totalItems === 1
-          ? null
-          : (swiper) => {
-              swiper.params.navigation.prevEl = navigationPrevRef.current;
-              swiper.params.navigation.nextEl = navigationNextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }
-      }
+      // onInit={
+      //   totalItems === 1
+      //     ? null
+      //     : (swiper) => {
+      //         swiper.params.navigation.prevEl = navigationPrevRef.current;
+      //         swiper.params.navigation.nextEl = navigationNextRef.current;
+      //         swiper.navigation.init();
+      //         swiper.navigation.update();
+      //       }
+      // }
       pagination={
         totalItems === 1
           ? false
           : {
               clickable: true,
               renderBullet: function (index, className) {
-                return `<span data-ui-element='Slide ${
-                  index + 1
-                }' class='${className}'> </span>`;
+                return `<span class='${className}'> </span>`;
               },
             }
       }
       {...props}
-      data-ui-section="Banner - Slider"
     >
       {content.map((item, index) => (
         <SwiperSlide id={"home-slider-" + (index + 1)} key={`slide -${index}`}>
@@ -96,14 +93,12 @@ export const Carousel: React.FC<CarouselProps> = ({
             className="swiper-button-prev"
             role="button"
             aria-label="Previous slide"
-            data-ui-element="Slide anterior"
           ></div>
           <div
             ref={navigationNextRef}
             className="swiper-button-next"
             role="button"
             aria-label="Next slide"
-            data-ui-element="Slide siguiente"
           ></div>
         </>
       )}
