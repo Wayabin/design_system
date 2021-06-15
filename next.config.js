@@ -10,6 +10,10 @@ module.exports = withCss(
       // !! WARN !!
           ignoreBuildErrors:false,
       },
+      publicRuntimeConfig: {
+        // Will be available on both server and client
+        staticFolder: '/static',
+      },
     webpack(config) {
       config.module.rules.push({
         
