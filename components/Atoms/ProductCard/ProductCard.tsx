@@ -17,7 +17,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div className="w-full py-5">
-      <a
+      <div
         href=""
         className="
         c-card
@@ -110,7 +110,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </svg>
           <span className="ml-2">34 Bewertungen</span>
         </div> */}
-      </a>
+      </div>
     </div>
   );
 };
