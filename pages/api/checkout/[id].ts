@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import getConfig from "next/config";
 
-import Stripe from 'stripe'
-const stripe = new Stripe("sk_test_51HbqwSKOGzbsHBKackmZaRIWHLEH4BQ2Mz937fVClCENFK9ZyG2d2cEwSK6rWV6zODfyalaEsbbU4F8N76iqmFXA00KheWGPKH", {
-    // https://github.com/stripe/stripe-node#configuration
-    apiVersion: '2020-03-02',
-})
+const env = getConfig().publicRuntimeConfig;
 
+const STRIPE_SECRET_KEY = "sk_test_51HbqwSKOGzbsHBKackmZaRIWHLEH4BQ2Mz937fVClCENFK9ZyG2d2cEwSK6rWV6zODfyalaEsbbU4F8N76iqmFXA00KheWGPKH"
+
+const stripe = require("stripe")("sk_test_51HbqwSKOGzbsHBKackmZaRIWHLEH4BQ2Mz937fVClCENFK9ZyG2d2cEwSK6rWV6zODfyalaEsbbU4F8N76iqmFXA00KheWGPKH");
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
