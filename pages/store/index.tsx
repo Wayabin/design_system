@@ -13,9 +13,12 @@ import { Products } from "../../mocks/products";
 const env = getConfig().publicRuntimeConfig;
 const STRIPE_PUBLIC_KEY = env.STRIPE_PUBLIC_KEY;
 
-const stripePromise = loadStripe(`"${STRIPE_PUBLIC_KEY}"`, {
-  locale: "es",
-});
+const stripePromise = loadStripe(
+  "pk_test_51HbqwSKOGzbsHBKaPqkAcRH0UNQ4UaRrXXkfpaV0rycPRqNDW0xVB6gcBi8fW3PA5e8eHXA2lFPl7bcIy41KbrT700dUUNNrEe",
+  {
+    locale: "es",
+  }
+);
 
 export interface HomeProps {
   banners: Array<BannerObject>;
