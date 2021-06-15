@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 
 import type { AppProps /*, AppContext */ } from "next/app";
-
+import wrapper from "../state/index";
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
 };
@@ -17,5 +17,4 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 
 //   return { ...appProps }
 // }
-
-export default MyApp;
+export default wrapper.withRedux(MyApp);
