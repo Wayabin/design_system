@@ -18,9 +18,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           product_data: {
             name: 'T-shirt',
           },
-          unit_amount: 2000,
+          unit_amount: 500,
         },
-        quantity: 2,
+        quantity: 1,
       },
       {
         price_data: {
@@ -35,7 +35,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     ],
     mode: 'payment',
     success_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${req.headers.origin}/donate-with-checkout`,
+    cancel_url: `${req.headers.origin}/store`,
   })
   res.status(200).json({ sessionId: session.id });
 };

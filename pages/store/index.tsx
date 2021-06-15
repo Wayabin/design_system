@@ -37,6 +37,7 @@ type BannerImage = {
 };
 
 const Home: React.FC<HomeProps> = ({ banners }) => {
+  
   const handleClick = async () => {
     const { sessionId } = await fetch("/api/checkout/session", {
       method: "POST",
