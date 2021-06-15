@@ -8,7 +8,11 @@ module.exports = withCss(
       // Dangerously allow production builds to successfully complete even if
       // your project has type errors.
       // !! WARN !!
-          ignoreBuildErrors:true,
+          ignoreBuildErrors:false,
+      },
+      publicRuntimeConfig: {
+        // Will be available on both server and client
+        staticFolder: '/static',
       },
     webpack(config) {
       config.module.rules.push({
