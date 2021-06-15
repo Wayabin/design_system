@@ -9,10 +9,16 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import getConfig from "next/config";
 import { Products } from "../../mocks/products";
+import CatalogService from "../../services/Rest/CatalogService";
+import * as CatalogActions from "../../state/Catalog/actions";
+import wrapper from "../../state/index";
 
 const env = getConfig().publicRuntimeConfig;
 const STRIPE_PUBLIC_KEY = env.STRIPE_PUBLIC_KEY;
 
+const catalogService = new CatalogService({
+  baseURL: "https://dev-strapi-cms-ecommerce.test.telecom.com.ar",
+});
 const stripePromise = loadStripe(
   "pk_test_51HbqwSKOGzbsHBKaPqkAcRH0UNQ4UaRrXXkfpaV0rycPRqNDW0xVB6gcBi8fW3PA5e8eHXA2lFPl7bcIy41KbrT700dUUNNrEe",
   {
@@ -37,7 +43,6 @@ type BannerImage = {
 };
 
 const Home: React.FC<HomeProps> = ({ banners }) => {
-  
   const handleClick = async () => {
     const { sessionId } = await fetch("/api/checkout/session", {
       method: "POST",
@@ -119,3 +124,33 @@ export default Home;
 //     },
 //   };
 // }
+
+export const getServerSideProps = wrapper.getServerSideProps(
+  async ({ store }) => {
+    let productListing = {
+      page: 1,
+      pagesCount: 0,
+      pageSize: 20,
+      items: [],
+      hasError: false,
+    };
+
+    try {
+      store.dispatch(CatalogActions.loadCatalogAction());
+      const catalog = await CatalogService.getBannersList();
+    } catch (error) {
+      console.log(error);
+      productListing = {
+        page: 0,
+        pagesCount: 0,
+        pageSize: 0,
+        items: [],
+        hasError: true,
+      };
+      store.dispatch(CatalogActions.loadCatalogActionFailed(productListing));
+    }
+    return {
+      props: {},
+    };
+  }
+);
